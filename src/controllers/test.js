@@ -1,5 +1,8 @@
 
 
 const test = async (req, res) => {
-    res.send("test hello");
+    res.json("test hello");
+}
+module.exports = {
+    test
 }
