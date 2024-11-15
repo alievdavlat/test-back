@@ -1,6 +1,6 @@
 // Add Express
 const express = require("express");
-
+const router = require("./src/routes/test.routes");
 // Initialize Express
 const app = express();
 
@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
 app.get("/test", (req, res) => {
   res.send("Express on test");
 });
+app.use(router)
 
 // Initialize server
 app.listen(5000, () => {
