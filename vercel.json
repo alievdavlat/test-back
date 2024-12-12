@@ -21,7 +21,7 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "src/index.js",
+      "dest": "src/routes.js",
       "methods": [
         "GET",
         "POST",
