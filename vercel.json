@@ -7,17 +7,41 @@
     }
   ],
   "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/*",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
-        }
+    {
+      "src": "/api/media/(.*)",
+      "dest": "public/$1",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
     ]
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "src/index.js",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "src/index.js",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
+    }
+  ]
 }
