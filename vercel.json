@@ -12,11 +12,6 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "src/routes/routes.js",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-    },
-    {
       "src": "/(.*)",
       "dest": "src/index.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
@@ -24,6 +19,46 @@
     {
       "src": "/(.+)",
       "dest": "public/$1"
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/auth.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/comments.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/experience.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/getSelf.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/hero.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/mails.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+  },
+  {
+    "src": "/api/(.*)",
+    "dest": "src/routes/projects.routes.js",
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
   }
   ]
 }
