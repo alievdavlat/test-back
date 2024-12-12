@@ -3,7 +3,6 @@ import cors from "cors";
 import "dotenv/config";
 import router from "./src/routes/routes.js";
 import errorHandler from './src/middleware/errorHandler.js'
-import { CustomErrorHandler } from './src/error/error.js'
 import connectDB from "./src/config/mongoose.config.js";
 import { join } from "path";
 
@@ -20,6 +19,7 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('Welcome to the Express App!');
 });
+
 app.use('/api', router);
 app.use(errorHandler)
 
