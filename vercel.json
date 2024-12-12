@@ -4,61 +4,52 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/auth/(.*)",
+      "dest": "src/routes/auth.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/comments/(.*)",
+      "dest": "src/routes/comments.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/experience/(.*)",
+      "dest": "src/routes/experience.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/getSelf/(.*)",
+      "dest": "src/routes/getSelf.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/hero/(.*)",
+      "dest": "src/routes/hero.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/mails/(.*)",
+      "dest": "src/routes/mails.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/projects/(.*)",
+      "dest": "src/routes/projects.routes.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    },
+    {
+      "src": "/api/(.*)",
       "dest": "src/index.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
     },
     {
-      "src": "/(.+)",
+      "src": "/(.*)",
       "dest": "public/$1"
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/auth.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/comments.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/experience.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/getSelf.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/hero.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/mails.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  },
-  {
-    "src": "/api/(.*)",
-    "dest": "src/routes/projects.routes.js",
-    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-  }
+    }
   ]
 }
