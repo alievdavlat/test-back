@@ -9,39 +9,111 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.js"
+      "dest": "/index.js",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/auth.routes.js" 
+      "dest": "/src/routes/auth.routes.js",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/comments.routes.js" 
+      "dest": "/src/routes/comments.routes.js",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ] 
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/experience.routes.js" 
+      "dest": "/src/routes/experience.routes.js" ,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/getSelf.routes.js" 
+      "dest": "/src/routes/getSelf.routes.js" ,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/hero.routes.js" 
+      "dest": "/src/routes/hero.routes.js" ,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/mails.routes.js" 
+      "dest": "/src/routes/mails.routes.js" ,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/projects.routes.js" 
+      "dest": "/src/routes/projects.routes.js" ,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
-      "dest": "/src/routes/routes.js" 
+      "dest": "/src/routes/routes.js" ,
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
     },
     {
       "src": "/(.*)",
