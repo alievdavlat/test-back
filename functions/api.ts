@@ -31,7 +31,7 @@ app.listen(5000, () => {
 
 const handler = ServerlessHttp(app)
 
-module.exports.handler = async (event, context) {
+module.exports.handler = async (event, context) => {
   const res = await handler(event, context)
   return res
 }
