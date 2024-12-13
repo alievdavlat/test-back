@@ -5,6 +5,13 @@ import errorHandler from "./src/middleware/errorHandler.js";
 import connectDB from "./src/config/mongoose.config.js";
 import { CustomErrorHandler } from "./src/error/error.js";
 import { join } from "path";
+// models
+import Auth from "./src/model/auth.model.js";
+import comment from "./src/model/comments.model.js";
+import experience from "./src/model/experience.model.js";
+import hero from "./src/model/hero.model.js";
+import mails from "./src/model/mails.model.js";
+import projects from "./src/model/projects.model.js";
 
 // Initialize Express
 const app = express();
