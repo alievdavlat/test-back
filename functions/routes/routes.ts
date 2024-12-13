@@ -6,6 +6,10 @@ import commentsRouter from "./comments.routes";
 import mailRouter from "./mails.routes";
 import getSelfRouter from './getSelf.routes'
 import authRouter from './auth.routes'
+import ProjectMediaRouter from './projectUpload.routes'
+import ExperienceMediaRouter from './experienceUpload.routes'
+import AvatarRouter from './userAvatar.routes'
+
 const Routes = Router() 
 
 
@@ -17,5 +21,9 @@ export default Routes.use([
   commentsRouter,
   mailRouter,
   getSelfRouter,
-  authRouter
+  authRouter,
+  ProjectMediaRouter,
+  ExperienceMediaRouter,
+  AvatarRouter
+  
 ])

@@ -10,7 +10,7 @@ const SkillsSchema = new mongoose.Schema(
     },
     image:{
       type:String,
-      required:[true, "Please enter your name"]
+      required:[false, "Please enter your name"]
     }
   },
   {

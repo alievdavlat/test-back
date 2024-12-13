@@ -30,6 +30,7 @@ const ProjectsSchema = new mongoose.Schema(
     pictures: {
       type: [String],
       required: [false, "Please enter your password"],
+      default: [],
     },
     video: {
       type: String,

@@ -37,5 +37,8 @@
     "sequelize": "^6.37.5",
     "serverless-http": "^3.2.0",
     "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/multer": "^1.4.12"
   }
 }

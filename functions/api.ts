@@ -10,7 +10,13 @@ let records = [];
 // Initialize Express
 const app:Application = express();
 app.use(express.json());
+app.use("/api/media", [express.static(join(process.cwd(), "public", 'project'))]);
+app.use("/api/media", [express.static(join(process.cwd(), "public", 'experince'))]);
+app.use("/api/media", [express.static(join(process.cwd(), "public", 'skills'))]);
 app.use("/api/media", [express.static(join(process.cwd(), "public"))]);
+
+
+
 app.use(cors());
 
 // routes
