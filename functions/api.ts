@@ -10,17 +10,17 @@ let records = [];
 // Initialize Express
 const app:Application = express();
 app.use(express.json());
-app.use("/api/media", [express.static(join(process.cwd(), "public", 'project'))]);
-app.use("/api/media", [express.static(join(process.cwd(), "public", 'experince'))]);
-app.use("/api/media", [express.static(join(process.cwd(), "public", 'skills'))]);
-app.use("/api/media", [express.static(join(process.cwd(), "public"))]);
+app.use("/.netlify/functions/api/media", [express.static(join(process.cwd(), "public", 'project'))]);
+app.use("/.netlify/functions/api/media", [express.static(join(process.cwd(), "public", 'experince'))]);
+app.use("/.netlify/functions/api/media", [express.static(join(process.cwd(), "public", 'skills'))]);
+app.use("/.netlify/functions/api/media", [express.static(join(process.cwd(), "public"))]);
 
 
 
 app.use(cors());
 
 // routes
-app.get("/.netlify/functions/api", (req:Request, res:Response) => {
+app.get("/.netlify/functions/.netlify/functions/api", (req:Request, res:Response) => {
   res.send("Welcome to the Express App!");
 });
 app.use('/api', Router);
