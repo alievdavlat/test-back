@@ -14,11 +14,11 @@ app.use("/api/media", [express.static(join(process.cwd(), "public"))]);
 app.use(cors());
 
 // routes
-app.get("/", (req:Request, res:Response) => {
+app.get("/.netlify/functions/api", (req:Request, res:Response) => {
   res.send("Welcome to the Express App!");
 });
 
-
+app.use('/.netlify/functions/api', Router);
 // erro handler
 app.use(errorHandler);
 
