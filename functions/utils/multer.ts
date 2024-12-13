@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
     cb(null, path.join(process.cwd(), "public", "images"));
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname + path.extname(file.originalname));
+    cb(null, Date.now() + file.originalname);
   },
 });
 const experinceStorage = multer.diskStorage({
@@ -26,7 +26,7 @@ const experinceStorage = multer.diskStorage({
     cb(null, path.join(process.cwd(), "public", "experince"));
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname + path.extname(file.originalname));
+    cb(null, Date.now() + file.originalname);
   },
 });
 
@@ -35,7 +35,7 @@ const projectImageStorage = multer.diskStorage({
     cb(null, path.join(process.cwd(), "public", "project"));
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname + path.extname(file.originalname));
+    cb(null, Date.now() + file.originalname);
   },
 });
 const projectVideoStorage = multer.diskStorage({
@@ -43,7 +43,7 @@ const projectVideoStorage = multer.diskStorage({
     cb(null, path.join(process.cwd(), "public", "project"));
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname + path.extname(file.originalname));
+    cb(null, Date.now() + file.originalname);
   },
 });
 
@@ -53,7 +53,7 @@ const skillsStorage = multer.diskStorage({
     cb(null, path.join(process.cwd(), "public", "skills"));
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + file.originalname + path.extname(file.originalname));
+    cb(null, Date.now() + file.originalname);
   },
 });
 

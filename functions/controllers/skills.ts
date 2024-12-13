@@ -121,7 +121,7 @@ export default {
      
       res
         .status(200)
-        .json({ status: 200, msg: "Silll updated", data: [] });
+        .json({ status: 200, msg: "Skill updated", data: checkSkill });
     } catch (err) {
       return next(new CustomErrorHandler(500, err));
     }
