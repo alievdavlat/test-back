@@ -9,7 +9,7 @@ import authRouter from './auth.routes'
 import ProjectMediaRouter from './projectUpload.routes'
 import ExperienceMediaRouter from './experienceUpload.routes'
 import AvatarRouter from './userAvatar.routes'
-
+import SkillsRouter from "./skills.routes";
 const Routes = Router() 
 
 
@@ -24,6 +24,7 @@ export default Routes.use([
   authRouter,
   ProjectMediaRouter,
   ExperienceMediaRouter,
-  AvatarRouter
+  AvatarRouter,
+  SkillsRouter
   
 ])
