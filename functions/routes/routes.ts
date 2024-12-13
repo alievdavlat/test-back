@@ -26,5 +26,4 @@ export default Routes.use([
   ExperienceMediaRouter,
   AvatarRouter,
   SkillsRouter
-  
 ])
