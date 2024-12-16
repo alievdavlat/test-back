@@ -20,19 +20,18 @@ export default {
       let filename: any;
 
       if (req?.file) {
-        const userAvatar = await uploadToCloud(req.file, 'avatars')
-        user.avatar = userAvatar
+        const userAvatar = await uploadToCloud(req.file, "avatars");
+        user.avatar = userAvatar;
+        await user.save();
+        res.status(200).json({
+          status: 200,
+          data: user,
+          msg: "ok",
+        });
       }
       // const imagePath = `/media/${filename}`;
 
       // user.avatar = imagePath;
-
-      await user.save();
-      res.status(200).json({
-        status: 200,
-        data: user,
-        msg: "ok",
-      });
     } catch (err: any) {
       return next(new CustomErrorHandler(500, err.message));
     }
@@ -54,19 +53,18 @@ export default {
 
       if (req?.file) {
         // filename = req.file.filename;
-        const clientAvatar = await uploadToCloud(req.file, 'avatars')
-        client.avatar = clientAvatar
+        const clientAvatar = await uploadToCloud(req.file, "avatars");
+        client.avatar = clientAvatar;
+        await client.save();
+        res.status(200).json({
+          status: 200,
+          data: client,
+          msg: "ok",
+        });
       }
       // const imagePath = `/media/${filename}`;
 
       // client.avatar = imagePath;
-
-      await client.save();
-      res.status(200).json({
-        status: 200,
-        data: client,
-        msg: "ok",
-      });
     } catch (err: any) {
       return next(new CustomErrorHandler(500, err.message));
     }

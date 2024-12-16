@@ -117,14 +117,14 @@ export default {
         // filename = req.file.filename
         const skilImage = await uploadToCloud(req.file, 'skills')
         checkSkill.image = skilImage
+        await checkSkill.save()
+        res
+          .status(200)
+          .json({ status: 200, msg: "Skill updated", data: checkSkill });
       }
       // const imagePath = `/media/skills/${filename}`;
 
       // checkSkill.image = imagePath
-    await checkSkill.save()
-      res
-        .status(200)
-        .json({ status: 200, msg: "Skill updated", data: checkSkill });
     } catch (err) {
       return next(new CustomErrorHandler(500, err));
     }
