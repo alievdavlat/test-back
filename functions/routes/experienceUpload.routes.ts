@@ -6,7 +6,6 @@ const ExperienceMediaRouter = Router();
 
 ExperienceMediaRouter.put(
   "/experience-image-upload/:id",
-  uploadExperienceLogo.single("logo"),
   projectUploadController.upload_project_images
 );
 
