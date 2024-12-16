@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { CustomErrorHandler } from "../error/error";
 import Projects from '../model/projects.model'
+import { uploadToCloud } from "../utils/uploader";
 
 export default {
   upload_project_images: async (req: Request, res: Response, next: NextFunction) => {
@@ -21,12 +22,13 @@ export default {
         let updatedPictures: string[] = project.pictures || []; // Initialize pictures array if it’s empty
         
         // Iterate over the uploaded files
-        Object.keys(req?.files).forEach((key, index) => {
-          const filename = req?.files[key][0]?.filename;
-          if (filename) {
-            const imagePath = `/media/project/${filename}`;
-            updatedPictures[index] = imagePath; // Assign image path to the correct position in the array
-          }
+        Object.keys(req?.files).forEach( async(key, index) => {
+          // const filename = req?.files[key][0]?.filename;
+          // if (filename) {
+            // const imagePath = `/media/project/${filename}`;
+            updatedPictures[index] = await uploadToCloud(req?.files[key][0], 'project')
+            
+          // }
         });
 
         // Update the pictures array in the project document
@@ -63,11 +65,11 @@ export default {
 
       if (req?.file) {
         // Get the filename of the uploaded video file
-        const filename = req.file.filename;
+        // const filename = req.file.filename;
 
         // Construct the file path to the uploaded video
-        const videoPath = `/media/project/${filename}`;
-
+        // const videoPath = `/media/project/${filename}`;
+        const videoPath = await uploadToCloud(req.file, "project")
         // Update the project with the video URL
         project.video = videoPath; // Assuming `video` field exists in the project schema
 

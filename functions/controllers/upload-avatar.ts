@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { CustomErrorHandler } from "../error//error";
 import Auth from "../model/auth.model";
 import Comments from "../model/comments.model";
+import { uploadToCloud } from "../utils/uploader";
 export default {
   upload_user_avatar: async (
     req: Request,
@@ -19,11 +20,12 @@ export default {
       let filename: any;
 
       if (req?.file) {
-        filename = req.file.filename;
+        const userAvatar = await uploadToCloud(req.file, 'avatars')
+        user.avatar = userAvatar
       }
-      const imagePath = `/media/${filename}`;
+      // const imagePath = `/media/${filename}`;
 
-      user.avatar = imagePath;
+      // user.avatar = imagePath;
 
       await user.save();
       res.status(200).json({
@@ -51,11 +53,13 @@ export default {
       let filename: any;
 
       if (req?.file) {
-        filename = req.file.filename;
+        // filename = req.file.filename;
+        const clientAvatar = await uploadToCloud(req.file, 'avatars')
+        client.avatar = clientAvatar
       }
-      const imagePath = `/media/${filename}`;
+      // const imagePath = `/media/${filename}`;
 
-      client.avatar = imagePath;
+      // client.avatar = imagePath;
 
       await client.save();
       res.status(200).json({

@@ -1,6 +1,7 @@
 import Skills from "../model/skils.model";
 import { CustomErrorHandler } from "../error/error";
 import { Request, Response, NextFunction } from "express";
+import { uploadToCloud } from "../utils/uploader";
 
 export default {
   GET: async (
@@ -113,12 +114,14 @@ export default {
       let filename:any 
 
       if (req?.file) {
-        filename = req.file.filename
+        // filename = req.file.filename
+        const skilImage = await uploadToCloud(req.file, 'skills')
+        checkSkill.image = skilImage
       }
-      const imagePath = `/media/skills/${filename}`;
+      // const imagePath = `/media/skills/${filename}`;
 
-      checkSkill.image = imagePath
-     
+      // checkSkill.image = imagePath
+    await checkSkill.save()
       res
         .status(200)
         .json({ status: 200, msg: "Skill updated", data: checkSkill });

@@ -20,7 +20,7 @@ app.use("/.netlify/functions/api/media", [express.static(join(process.cwd(), "pu
 app.use(cors());
 
 // routes
-app.get("/.netlify/functions/.netlify/functions/api", (req:Request, res:Response) => {
+app.get("/.netlify/functions/api", (req:Request, res:Response) => {
   res.send("Welcome to the Express App!");
 });
 app.use('/api', Router);

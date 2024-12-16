@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { CustomErrorHandler } from "../error/error";
 import Experience from '../model/experience.model'
+import { uploadToCloud } from "../utils/uploader";
 
 export default {
  
@@ -20,13 +21,15 @@ export default {
 
       if (req?.file) {
         // Get the filename of the uploaded video file
-        const filename = req.file.filename;
+        // const filename = req.file.filename;
 
         // Construct the file path to the uploaded video
-        const imagePath = `/media/experince/${filename}`;
+        // const imagePath = `/media/experince/${filename}`;
 
-        experience.logo = imagePath; 
-
+        // experience.logo = imagePath; 
+        const logo = await uploadToCloud(req.file, 'experince')
+        experience.logo = logo
+        
         await experience.save();
 
         res.status(200).json({
