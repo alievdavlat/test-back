@@ -10,7 +10,7 @@ SkillsRouter
 .get('/skills-list', SkillsController.GET)
 .post("/skills-create", SkillsController.POST)
 .put("/skills-update/:id", SkillsController.PUT)
-.put("/skills-image-upload/:id",  SkillsController.UPLOAD_SKILL_IMAGE)
+.put("/skills-image-upload/:id",uploadSkillsImage.single('image'),  SkillsController.UPLOAD_SKILL_IMAGE)
 .delete("/skills-delete/:id", SkillsController.DELETE)
 
 

@@ -2,13 +2,13 @@ import 'dotenv/config'
 
 export default {
 	firebaseConfig  :   {
-		apiKey: process.env.FIRE_BASE_API_KEY as string,
-		authDomain: process.env.FIRE_BASE_DOMAIN,
-		projectId: process.env.FIRE_BASE_PROJECTID,
-		storageBucket: process.env.FIRE_BASE_STRORAGE_BUCKET,
-		messagingSenderId: process.env.FIRE_BASE_MESSAGE_SENDERID,
-		appId: process.env.FIRE_BASE_APP_ID,
-		measurementId:process.env.FIRE_BASE_MESSUREMENT_ID
+		apiKey: "AIzaSyCcErGUHPLaXEeBkgPl3OyJJo6OYuusZIE",
+		authDomain: "lms-platform-68b0b.firebaseapp.com",
+		projectId: "lms-platform-68b0b",
+		storageBucket: "lms-platform-68b0b.appspot.com",
+		messagingSenderId: "102815728150",
+		appId: "1:102815728150:web:9bc5c147a32cec4c5e6b37",
+		measurementId: "G-H3VM8K3BX7"
 	}
 
 }

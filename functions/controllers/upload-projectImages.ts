@@ -19,32 +19,33 @@ export default {
       }
 
       if (req?.files) {
-        let updatedPictures: string[] = project.pictures || []; // Initialize pictures array if it’s empty
+        let updatedPictures: string[] = project.pictures || []; 
         
-        // Iterate over the uploaded files
-        Object.keys(req?.files).forEach( async(key, index) => {
-          // const filename = req?.files[key][0]?.filename;
-          // if (filename) {
-            // const imagePath = `/media/project/${filename}`;
-            updatedPictures[index] = await uploadToCloud(req?.files[key][0], 'project')
-            
-          // }
-        });
-
-        // Update the pictures array in the project document
-        project.pictures = updatedPictures;
-
-        await project.save();
-
-        res.status(200).json({
-          status: 200,
-          project: project,
-          msg: "Project images updated successfully",
-        });
-        return;
+        try {
+          for (const key of Object.keys(req?.files)) {
+            const file = req?.files[key];
+            if (file) {
+              let imagePath = await uploadToCloud(file, 'project');
+              updatedPictures.push(imagePath);
+            }
+          }
+      
+          project.pictures = updatedPictures;
+      
+          await project.save();
+      
+          res.status(200).json({
+            status: 200,
+            project: project,
+            msg: "Project images updated successfully",
+          });
+        } catch (error) {
+          return next(new CustomErrorHandler(500, "Error uploading images"));
+        }
       } else {
         return next(new CustomErrorHandler(400, "No images uploaded"));
       }
+      
     } catch (err) {
       return next(new CustomErrorHandler(500, `Server Error: ${err.message}`));
     }

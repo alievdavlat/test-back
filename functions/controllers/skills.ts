@@ -113,7 +113,9 @@ export default {
        
       let filename:any 
 
+      console.log(req?.file);
       if (req?.file) {
+        
         // filename = req.file.filename
         const skilImage = await uploadToCloud(req.file, 'skills')
         checkSkill.image = skilImage
